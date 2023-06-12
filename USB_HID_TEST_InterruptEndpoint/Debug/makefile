@@ -79,8 +79,8 @@ all: main-build
 main-build: USB_HID_TEST.elf secondary-outputs
 
 # Tool invocations
-USB_HID_TEST.elf USB_HID_TEST.map: $(OBJS) $(USER_OBJS) D:\Projects\TestUSB_STM32_with_Linux\TestUsb\USB_HID_TEST\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "USB_HID_TEST.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\Projects\TestUSB_STM32_with_Linux\TestUsb\USB_HID_TEST\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="USB_HID_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+USB_HID_TEST.elf USB_HID_TEST.map: $(OBJS) $(USER_OBJS) D:\Projects\TestUSB_STM32_with_Linux\TestUsb\STM32_USB_Proj\USB_HID_TEST_InterruptEndpoint\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "USB_HID_TEST.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\Projects\TestUSB_STM32_with_Linux\TestUsb\STM32_USB_Proj\USB_HID_TEST_InterruptEndpoint\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="USB_HID_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
